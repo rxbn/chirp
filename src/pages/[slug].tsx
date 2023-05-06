@@ -47,9 +47,16 @@ const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
           />
         </div>
         <div className="h-[64px]"></div>
-        <div className="p-4 text-2xl font-bold">{`@${
-          data.username ?? ""
-        }`}</div>
+        <div className="p-4 text-2xl font-bold">
+          {`@${data.username ?? ""}`}{" "}
+          <Image
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/2880px-Twitter_Verified_Badge.svg.png"
+            alt="Verified badge"
+            width={24}
+            height={24}
+            className="inline-block align-text-bottom"
+          />
+        </div>
         <div className="w-full border-b border-slate-400" />
         <ProfileFeed userId={data.id} />
       </PageLayout>
