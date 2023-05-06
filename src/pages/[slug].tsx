@@ -80,7 +80,7 @@ type PostWithUser = RouterOutputs["posts"]["getAll"][number];
 const PostView = (probs: PostWithUser) => {
   const { post, author } = probs;
   return (
-    <div key={post.id} className="flex gap-3 border-b border-slate-400 p-4">
+    <div key={post.id} className="broder-b flex gap-3 border-slate-400 p-4">
       <Image
         src={author.profileImageUrl}
         className="h-14 w-14 rounded-full"
