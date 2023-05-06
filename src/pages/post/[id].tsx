@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const id = context.params?.id;
 
-  if (typeof id !== "string") throw new Error("no slug");
+  if (typeof id !== "string") throw new Error("no id");
 
   await ssg.posts.getById.prefetch({ id });
 
