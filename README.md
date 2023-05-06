@@ -1,6 +1,6 @@
 # chirp
 
-https://www.youtube.com/watch?v=YkOSUVzOAA4
+[Tutorial](https://www.youtube.com/watch?v=YkOSUVzOAA4)
 
 ## TODO
 
