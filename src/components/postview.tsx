@@ -24,6 +24,13 @@ export const PostView = (probs: PostWithUser) => {
           <Link href={`/@${author.username}`}>
             <span>{`@${author.username} `}</span>
           </Link>
+          <Image
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/2880px-Twitter_Verified_Badge.svg.png"
+            alt="Verified badge"
+            width={18}
+            height={18}
+            className="inline-block object-contain align-text-bottom"
+          />
           <Link href={`/post/${post.id}`}>
             <span className="font-thin">{` · ${dayjs(
               post.createdAt
