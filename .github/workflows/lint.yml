@@ -1,5 +1,5 @@
 ---
-name: CI
+name: lint
 
 on:
   - push
@@ -9,7 +9,7 @@ env:
   DATABASE_URL: https://fake.com
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
