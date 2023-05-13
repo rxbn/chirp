@@ -27,12 +27,12 @@ const ProfileFeed = (props: { userId: string }) => {
 };
 
 const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
+  const { user } = useUser();
+
   const { data } = api.profile.getUserByUsername.useQuery({
     username,
   });
   if (!data) return <div>404</div>;
-
-  const { user } = useUser();
 
   const isCurrentUser = data.id === user?.id;
 
@@ -71,7 +71,7 @@ const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
             </svg>
             {isCurrentUser && (
               <div className="ml-1 rounded bg-gray-600 p-0.5">
-                <div className="text-xs">It's you!</div>
+                <div className="text-xs">It&apos;s you!</div>
               </div>
             )}
           </div>
