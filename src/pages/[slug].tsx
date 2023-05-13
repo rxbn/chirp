@@ -1,3 +1,4 @@
+import { useUser } from "@clerk/nextjs";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { api } from "~/utils/api";
@@ -30,6 +31,10 @@ const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
     username,
   });
   if (!data) return <div>404</div>;
+
+  const { user } = useUser();
+
+  const isCurrentUser = data.id === user?.id;
 
   return (
     <>
@@ -64,6 +69,11 @@ const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
                 style={{ fill: "#1d9bf0", fillOpacity: 1 }}
               />
             </svg>
+            {isCurrentUser && (
+              <div className="ml-1 rounded bg-gray-600 p-0.5">
+                <div className="text-xs">It's you!</div>
+              </div>
+            )}
           </div>
         </div>
         <div className="w-full border-b border-slate-400" />
