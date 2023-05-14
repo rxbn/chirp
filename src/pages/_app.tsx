@@ -11,7 +11,12 @@ import Head from "next/head";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <ClerkProvider {...pageProps} appearance={{ baseTheme: dark }}>
+    <ClerkProvider
+      {...pageProps}
+      appearance={{
+        baseTheme: dark,
+      }}
+    >
       <Head>
         <title>Chirp</title>
         <meta name="description" content="💭" />
