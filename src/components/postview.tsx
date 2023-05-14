@@ -23,10 +23,7 @@ export const PostView = (probs: PostWithUser) => {
       <div className="flex flex-col">
         <div className="flex items-center gap-1 text-slate-300">
           <Link className="flex items-center" href={`/@${author.username}`}>
-            <span className="font-bold">
-              {author.firstName}
-              {`${author.lastName ? ` ${author.lastName}` : ""}`}
-            </span>
+            <span className="font-bold">{author.firstName}</span>
             <VerifiedBadge className="ml-1 inline-flex" size={18} />
             <span className="ml-1 font-thin">{`@${author.username} `}</span>
           </Link>
