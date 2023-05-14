@@ -1,9 +1,8 @@
-import { SignInButton, useUser } from "@clerk/nextjs";
+import { SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { type NextPage } from "next";
 
 import { api } from "~/utils/api";
 
-import Image from "next/image";
 import { LoadingPage, LoadingSpinner } from "~/components/loading";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
@@ -36,13 +35,6 @@ const CreatePostWizard = () => {
 
   return (
     <div className="flex w-full gap-3">
-      <Image
-        src={user.profileImageUrl}
-        className="h-14 w-14 rounded-full"
-        alt="Profile image"
-        width={56}
-        height={56}
-      />
       <input
         placeholder="Type some emojis!"
         className="grow bg-transparent outline-none"
@@ -67,6 +59,7 @@ const CreatePostWizard = () => {
           <LoadingSpinner size={20} />
         </div>
       )}
+      <UserButton />
     </div>
   );
 };
