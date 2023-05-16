@@ -53,16 +53,19 @@ const ProfilePage: NextPage<{ username: string }> = ({ username }) => {
           />
         </div>
         <div className="h-[64px]"></div>
-        <div className="flex items-center justify-start p-4 text-2xl font-bold">
+        <div className="ml-4 mt-4 flex items-center justify-start text-2xl font-bold">
           <div className="flex items-center">
-            {`@${data.username ?? ""}`}
+            {data.firstName ?? ""}
             <VerifiedBadge className="ml-1 h-6 w-6" />
-            {isCurrentUser && (
-              <div className="ml-1 rounded bg-gray-600 p-0.5">
-                <div className="text-xs">It&apos;s you!</div>
-              </div>
-            )}
           </div>
+        </div>
+        <div className="mb-4 ml-4 flex items-center justify-start text-sm">
+          <span className="text-slate-400">{`@${data.username ?? ""}`}</span>
+          {isCurrentUser && (
+            <div className="ml-1 rounded bg-gray-600 p-0.5">
+              <div>It&apos;s you!</div>
+            </div>
+          )}
         </div>
         <div className="w-full border-b border-slate-400" />
         <ProfileFeed userId={data.id} />
